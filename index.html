@@ -588,33 +588,197 @@ color:#555;
 
 /* CONTAINER */
 .appointment-container{
-display:flex;
-justify-content:center;
-align-items:flex-start;
-gap:50px;
-flex-wrap:wrap;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:stretch;
+
+    gap:60px;
+
+    flex-wrap:wrap;
+
 }
 
 /* LEFT */
 .appointment-left{
-max-width:350px;
-text-align:left;
+
+    width:360px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:30px;
+
+}
+  /*=========================
+      APPOINTMENT ICON
+=========================*/
+
+.appointment-icon{
+
+    width:150px;
+
+    height:150px;
+
+    margin:0 auto 15px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#ffffff;
+
+    border:3px solid transparent;
+
+    background-image:
+        linear-gradient(#ffffff,#ffffff),
+        linear-gradient(135deg,#D62D2D,#F4B400,#D62D2D);
+
+    background-origin:border-box;
+
+    background-clip:padding-box,border-box;
+
+    box-shadow:
+        0 12px 30px rgba(244,180,0,.20);
+
+    overflow:hidden;
+
+}
+   .appointment-icon img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    transition:.35s;
+
+}
+
+.appointment-icon:hover img{
+
+    transform:scale(1.05);
+
 }
 
 .appointment-left h3{
-color:#2b2f77;
-margin-bottom:15px;
+
+    font-size:2.15rem;
+
+    font-weight:800;
+
+    color:#1E2F78;
+
+    line-height:1.3;
+
+    margin:10px 0 12px;
+
+    text-align:center;
+
+    letter-spacing:-0.5px;
+
+}
+    /*=========================
+    PREMIUM DIVIDER
+=========================*/
+
+.appointment-divider{
+
+    width:180px;
+
+    height:4px;
+
+    margin:15px auto 20px;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        90deg,
+        #D62D2D 0%,
+        #F4B400 50%,
+        #D62D2D 100%
+    );
+
+    background-size:200%;
+
+    animation:dividerGlow 4s linear infinite;
+
+    box-shadow:
+        0 0 12px rgba(244,180,0,.35);
+
+}
+    @keyframes dividerGlow{
+
+    from{
+
+        background-position:0%;
+
+    }
+
+    to{
+
+        background-position:200%;
+
+    }
+
 }
 
 .appointment-left ul{
-list-style:none;
-padding:0;
+
+    list-style:none;
+
+    padding:0;
+
+    margin:10px 0 0;
+
+    width:100%;
+
 }
 
 .appointment-left li{
-margin-bottom:10px;
-font-size:15px;
-color:#444;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:8px 0;
+
+    font-size:18px;
+
+    color:#333;
+
+    text-align:left;
+
+}
+
+.appointment-left li i{
+
+    color:#2B2F77;
+
+    width:24px;
+
+    min-width:24px;
+
+    text-align:center;
+
 }
 
 /* RIGHT (FORM) */
@@ -690,9 +854,17 @@ box-shadow:0 12px 30px rgba(0,0,0,0.3);
 
 /* TRUST LINE */
 .trust-line{
-font-size:12px;
-margin-top:10px;
-color:#777;
+
+    margin-top:18px;
+
+    text-align:center;
+
+    font-size:13px;
+
+    color:#666;
+
+    line-height:1.7;
+
 }
 
   /* FOOTER */
@@ -1228,48 +1400,136 @@ Expert guidance, personalized strategies, and complete financial support you can
 </div>
 
 </section>
-<!-- APPOINTMENT SECTION -->
+<!--====================================================
+                APPOINTMENT SECTION
+=====================================================-->
+
 <section id="appointment" class="appointment">
 
-<h2>Get Your Personalized Financial Plan – Book a Free 30-Minute Consultation</h2>
+    <h2>
+        Get Your Personalized Financial Plan
+        <br>
+        Book a Free 30-Minute Consultation
+    </h2>
 
-<p class="appointment-sub">
-Fill in your details and get expert financial guidance tailored to your goals. 100% free consultation with quick response.
-</p>
+    <p class="appointment-sub">
+        Fill in your details and receive expert financial guidance
+        tailored to your goals. 100% Free Consultation with a
+        quick response from our advisor.
+    </p>
 
-<div class="appointment-container">
+    <div class="appointment-container">
 
-<!-- LEFT SIDE -->
-<div class="appointment-left">
+        <!--=========================
+                LEFT SIDE
+        ==========================-->
 
-<h3>Why Book This Consultation?</h3>
+        <div class="appointment-left">
 
-<ul>
-<li>✔ 100% Free Financial Consultation</li>
-<li>✔ Personalized Plan for Your Goals</li>
-<li>✔ Quick Call Back within 6 Hours</li>
-<li>✔ Safe & Secure Information</li>
-</ul>
+            <!-- Premium Icon -->
 
-</div>
+           <div class="appointment-icon">
 
-<!-- RIGHT SIDE -->
-<div class="appointment-right">
-
-<input type="text" id="app-name" placeholder="Full Name">
-<input type="text" id="app-phone" placeholder="Mobile Number">
-<input type="email" id="app-email" placeholder="Email Address">
-<textarea id="app-msg" placeholder="Your Message"></textarea>
-
-<button onclick="sendAppointment()">Get My Free Plan</button>
-
-<p class="trust-line">
-✔ Your information is 100% secure | No spam. No obligations.
-</p>
+    <img src="appnt.png" alt="Book Consultation">
 
 </div>
 
-</div>
+            <h3>
+
+                Why Book This Consultation?
+
+            </h3>
+
+            <!-- Decorative Divider -->
+
+            <div class="appointment-divider"></div>
+
+            <ul>
+
+                <li>
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    100% Free Financial Consultation
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    Personalized Financial Plan For Your Goals
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    Quick Call Back Within 6 Hours
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    Safe & Secure Information
+
+                </li>
+
+            </ul>
+
+        </div>
+
+        <!--=========================
+                RIGHT SIDE
+        ==========================-->
+
+        <div class="appointment-right">
+
+            <input
+                type="text"
+                id="app-name"
+                placeholder="Full Name"
+            >
+
+            <input
+                type="text"
+                id="app-phone"
+                placeholder="Mobile Number"
+            >
+
+            <input
+                type="email"
+                id="app-email"
+                placeholder="Email Address"
+            >
+
+            <textarea
+                id="app-msg"
+                placeholder="Tell us about your financial goals..."
+            ></textarea>
+
+            <button onclick="sendAppointment()">
+
+                Get My Free Plan
+
+            </button>
+
+            <p class="trust-line">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                Your information is 100% secure |
+                No spam |
+                No obligations.
+
+            </p>
+
+        </div>
+
+    </div>
 
 </section>
 <!-- FOOTER -->
