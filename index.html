@@ -1301,15 +1301,51 @@ function closeForm(){
 document.getElementById("popupForm").style.display="none";
 }
 
-function sendWhatsApp(){
-let name=document.getElementById("name").value;
-let phone=document.getElementById("phone").value;
+function sendAppointment(){
 
-let msg=`Service:${service}%0AName:${name}%0APhone:${phone}`;
-window.open("https://wa.me/919668789379?text="+msg);
+    let name=document.getElementById("app-name").value.trim();
 
-alert("Thank you! You will receive a call within 6 hours.");
-closeForm();
+    let phone=document.getElementById("app-phone").value.trim();
+
+    let email=document.getElementById("app-email").value.trim();
+
+    let message=document.getElementById("app-msg").value.trim();
+
+    if(name==="" || phone===""){
+
+        alert("Please enter your Name and Mobile Number.");
+
+        return;
+
+    }
+
+    let whatsappMessage =
+`📋 *New Consultation Request*
+
+👤 Name: ${name}
+
+📞 Mobile: ${phone}
+
+📧 Email: ${email}
+
+💬 Message:
+${message}
+
+------------------------
+Submitted from Website`;
+
+    let url =
+`https://wa.me/919668789379?text=${encodeURIComponent(whatsappMessage)}`;
+
+    window.open(url,"_blank");
+
+    alert("✅ Thank you!\n\nYour request has been submitted successfully.\n\nOur advisor will contact you within 6 hours.");
+
+    document.getElementById("app-name").value="";
+    document.getElementById("app-phone").value="";
+    document.getElementById("app-email").value="";
+    document.getElementById("app-msg").value="";
+
 }
 </script>
 
